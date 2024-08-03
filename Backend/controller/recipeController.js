@@ -47,7 +47,7 @@ const editRecipe = async (req, res) =>{
 
 // Delete a recipe
 const deleteRecipe = async (req, res) =>{ 
-    const recipe = await Recipes.findByIdAndDelete(req.params.id)
+    await Recipes.findByIdAndDelete(req.params.id)
 
     try{
         res.json({message: 'Recipe deleted'})        
