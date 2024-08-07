@@ -1,8 +1,11 @@
 import logo from '../assets/logo.png'
 import wave from '../assets/wave.svg'
+import Navbar from './common/Navbar'
 export default function Home() { 
   return (
+    
     <div className="h-screen bg-lime-100 overflow-y-auto">
+    <Navbar/>
     <div className="flex pt-20">
     <div className="w-full md:w-2/3 flex flex-col mx-10">
     <h1 className=' text-3xl font-bold font-mono py-3'>Only Pans</h1>
