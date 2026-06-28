@@ -1,10 +1,19 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const connectDB = require('./config/connectionDB.js');
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:5173']
+}));
+
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
+
 const PORT = process.env.PORT || 5002;
 
 connectDB(); 
